@@ -96,3 +96,18 @@ func main() {
 	log.Printf("Serving on port: %s\n", port)
 	log.Fatal(srv.ListenAndServe())
 }
+
+package main
+
+import (
+	"encoding/json"
+	"net/http"
+)
+
+func handlerReadiness(w http.ResponseWriter, r *http.Request) {
+	resp := map[string]string{"status": "ok"}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(resp)
+}
+
+v1Router.Get("/ready", handlerReadiness)
