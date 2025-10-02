@@ -79,10 +79,10 @@ func main() {
 	v1Router := chi.NewRouter()
 
 	if apiCfg.DB != nil {
-		// v1Router.Post("/users", apiCfg.handlerUsersCreate)
-		// v1Router.Get("/users", apiCfg.middlewareAuth(apiCfg.handlerUsersGet))
-		// v1Router.Get("/notes", apiCfg.middlewareAuth(apiCfg.handlerNotesGet))
-		// v1Router.Post("/notes", apiCfg.middlewareAuth(apiCfg.handlerNotesCreate))
+		//v1Router.Post("/users", apiCfg.handlerUsersCreate)
+		//v1Router.Get("/users", apiCfg.middlewareAuth(apiCfg.handlerUsersGet))
+		//v1Router.Get("/notes", apiCfg.middlewareAuth(apiCfg.handlerNotesGet))
+		//v1Router.Post("/notes", apiCfg.middlewareAuth(apiCfg.handlerNotesCreate))
 	}
 
 	v1Router.Get("/healthz", handlerReadiness)
